@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'rack-flash'
-require 'logger'
 
 class Application < Sinatra::Base
 
@@ -9,6 +8,7 @@ class Application < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
   set :method_override, true
+  set :database, 'sqlite3:///db/database.sqlite3'
 
   get '/' do
     erb :'index'

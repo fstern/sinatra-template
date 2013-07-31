@@ -1,15 +1,13 @@
 # Set up application
 
-```
+  git clone git@github.com:slackware666/sinatra-template.git family_faces
+  cd family_faces
   bundle install
-```
 
 # Start application
 
-```
   bin/start_application.sh
   open http://localhost:3000
-```
 
 # ActiveRecord
 
@@ -19,7 +17,7 @@ If you want to use ActiveRecord ORM, follow these few simple steps to create a d
 
 	rake db:create_migration NAME=create_persons
 	rake db:create_migration NAME=create_families
-	
+
 **db/migration/0123456789_create_persons.rb**
 
 	class CreatePersons < ActiveRecord::Migration
@@ -30,7 +28,7 @@ If you want to use ActiveRecord ORM, follow these few simple steps to create a d
 	      t.integer :age
 	    end
 	  end
-	
+
 	  def down
 	    drop_table :persons
 	  end
@@ -44,7 +42,7 @@ If you want to use ActiveRecord ORM, follow these few simple steps to create a d
 	      t.string :name
 	    end
 	  end
-	
+
 	  def down
 	    drop_table :families
 	  end
@@ -59,19 +57,19 @@ If you want to use ActiveRecord ORM, follow these few simple steps to create a d
 	  validates_presence_of :name, :nickname, :age
 	  validates_uniqueness_name :name, :nickname
 
-	  belongs_to :family	
+	  belongs_to :family
 
 	end
 
 **models/family.rb**
 
 	class Family < ActiveRecord::Base
-	
+
 	  validates_presence_of :name
 	  validates_uniqueness_name :name
-	
+
 	  has_many :persons
-	
+
 	end
 
 Don't forget to include these models into your application.rb:

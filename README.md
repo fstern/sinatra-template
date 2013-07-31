@@ -3,7 +3,7 @@
 ## Set up application
 
 ```
-  bundle exec
+  bundle install
 ```
 
 ## Start application

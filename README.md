@@ -1,18 +1,16 @@
-# README
-
-## Set up application
+# Set up application
 
 ```
   bundle install
 ```
 
-## Start application
+# Start application
 
 ```
   bin/start_application.sh
   open http://localhost:3000
 ```
 
-## License
+# License
 
   [http://de.wikipedia.org/wiki/WTFPL](http://de.wikipedia.org/wiki/WTFPL)

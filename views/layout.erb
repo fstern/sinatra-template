@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Title</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/css/custom.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Title</a>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+        <p class="navbar-text pull-right">
+          <a href="#" class="navbar-link">Login</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <% flash.keys.each do |level| %>
+        <div class="alert alert-<%= level %>">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[level] %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
+

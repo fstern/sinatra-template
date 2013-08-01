@@ -4,7 +4,7 @@ gem 'rack-flash3'
 gem 'sinatra'
 gem 'sqlite3'
 gem 'activerecord'
-gem 'puma'
+gem 'thin'
 
 source 'http://gemcutter.org'
 gem 'sinatra-activerecord'

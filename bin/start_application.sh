@@ -1,6 +1,6 @@
 #!/bin/bash
 
 port=3000
-server=puma
+server=thin
 
 bundle exec rackup -s $server -p $port

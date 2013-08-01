@@ -1,10 +1,15 @@
 require 'sinatra'
+require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'rack-flash'
 
 set :database, 'sqlite3:///db/database.sqlite3'
 
 class Application < Sinatra::Base
+
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   use Rack::Flash
   enable :sessions
